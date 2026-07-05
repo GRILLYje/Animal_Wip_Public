@@ -3,9 +3,9 @@ $ErrorActionPreference = "SilentlyContinue"
 [console]::OutputEncoding = [System.Text.Encoding]::UTF8
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-Write-Host "Checking for updates (YOU Animal)..." -ForegroundColor Cyan
+Write-Host "Checking for updates (Wip Animal)..." -ForegroundColor Cyan
 
-$apiUrl = "https://api.github.com/repos/GRILLYje/Animal_YOU_Public/releases/latest"
+$apiUrl = "https://api.github.com/repos/GRILLYje/Animal_Wip_Public/releases/latest"
 
 try {
     $releaseInfo = Invoke-RestMethod -Uri $apiUrl -Method Get
@@ -34,7 +34,7 @@ try {
     Exit
 }
 
-$folderPath = "$env:TEMP\YOU_Animal"
+$folderPath = "$env:TEMP\Wip_Animal"
 if (-not (Test-Path $folderPath)) {
     New-Item -ItemType Directory -Path $folderPath -Force | Out-Null
 }
@@ -69,5 +69,5 @@ try {
     Clear-History
 } catch {}
 
-Write-Host "Launching YOU Animal..." -ForegroundColor Green
+Write-Host "Launching Wip Animal..." -ForegroundColor Green
 Start-Process -FilePath $tempPath
